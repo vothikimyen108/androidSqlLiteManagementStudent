@@ -53,7 +53,7 @@ public class DBhelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery( "select * from Userdetail where name = ? " ,new String[]{name});
         if(cursor.getCount()>=0){
-            long result = DB.delete( "Userdetail",null,new String[]{name});
+            long result = DB.delete( "Userdetail","name=?",new String[]{name});
             if(result == -1)
                 return false;
             else

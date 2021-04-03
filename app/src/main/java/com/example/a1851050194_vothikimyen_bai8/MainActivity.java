@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameTXT = name.getText().toString();
-                Boolean checkUpdate = db.deleteUserDate( nameTXT);
+                Boolean checkUpdate = db.deleteUserDate(nameTXT);
                 if(checkUpdate)
                     Toast.makeText( MainActivity.this,"delete oke",Toast.LENGTH_SHORT ).show();
                 else
@@ -89,5 +89,6 @@ public class MainActivity extends AppCompatActivity {
         insert = findViewById( R.id.buttonInsert );
         update = findViewById( R.id.buttonUpdate);
         delete = findViewById( R.id.buttonDelete );
+        view = findViewById( R.id.buttonView );
     }
 }
