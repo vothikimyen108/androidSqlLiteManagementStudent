@@ -1,7 +1,9 @@
 package com.example.a1851050194_vothikimyen_bai8;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,7 +59,27 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-
+        view.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor cursor = db.getData();
+                if(cursor.getCount()==0){
+                    Toast.makeText( MainActivity.this," no found ",Toast.LENGTH_SHORT ).show();
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while (cursor.moveToNext()){
+                    buffer.append( "Name: " +cursor.getString( 0 )+"\n");
+                    buffer.append( "Contact: " +cursor.getString( 1 )+"\n");
+                    buffer.append( "Birth day: " +cursor.getString( 2 )+"\n");
+                }
+                AlertDialog.Builder builder = new AlertDialog.Builder( MainActivity.this);
+                builder.setCancelable( true );
+                builder.setTitle( "User detail list" );
+                builder.setMessage( buffer.toString() );
+                builder.show();
+            }
+        } );
     }
 
     private void anhXa() {
