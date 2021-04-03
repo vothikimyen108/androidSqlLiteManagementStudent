@@ -3,8 +3,10 @@ package com.example.a1851050194_vothikimyen_bai8;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +19,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView( R.layout.activity_main );
         anhXa();
         db = new DBhelper( this );
+        insert.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameTXT = name.getText().toString();
+                String contactTXT = contact.getText().toString();
+                String dobTXT = dob.getText().toString();
+                Boolean checkInsert = db.insterUserDate( nameTXT,contactTXT,dobTXT);
+                if(checkInsert)
+                    Toast.makeText( MainActivity.this,"New entry insert",Toast.LENGTH_SHORT ).show();
+                else
+                    Toast.makeText( MainActivity.this," No new entry insert",Toast.LENGTH_SHORT ).show();
+            }
+        } );
+
 
     }
 
