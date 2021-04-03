@@ -45,7 +45,17 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText( MainActivity.this," No new entry update",Toast.LENGTH_SHORT ).show();
             }
         } );
-
+        delete.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameTXT = name.getText().toString();
+                Boolean checkUpdate = db.deleteUserDate( nameTXT);
+                if(checkUpdate)
+                    Toast.makeText( MainActivity.this,"delete oke",Toast.LENGTH_SHORT ).show();
+                else
+                    Toast.makeText( MainActivity.this," no delete ",Toast.LENGTH_SHORT ).show();
+            }
+        } );
 
 
     }
