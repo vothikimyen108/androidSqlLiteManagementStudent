@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the below detail"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+    />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:supportsRtl="false"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/editTextTextContact"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:supportsRtl="false"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:hint="Contact" />
+
+    <EditText
+        android:id="@+id/editTextBirthDay"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:supportsRtl="false"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:hint="Date of birth" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert data to sql lite" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update data to sql lite" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete data from sql lite" />
+
+    <Button
+        android:id="@+id/buttonView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="view data from sql lite" />
+
+
+</LinearLayout>
