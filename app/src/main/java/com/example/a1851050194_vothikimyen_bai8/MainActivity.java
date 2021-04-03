@@ -10,12 +10,14 @@ public class MainActivity extends AppCompatActivity {
 
     EditText name, contact, dob;
     Button insert, update, delete,view;
-
+    DBhelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
         anhXa();
+        db = new DBhelper( this );
+
     }
 
     private void anhXa() {
