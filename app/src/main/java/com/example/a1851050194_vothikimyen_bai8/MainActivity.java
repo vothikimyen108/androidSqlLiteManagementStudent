@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText( MainActivity.this," No new entry insert",Toast.LENGTH_SHORT ).show();
             }
         } );
+        update.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameTXT = name.getText().toString();
+                String contactTXT = contact.getText().toString();
+                String dobTXT = dob.getText().toString();
+                Boolean checkUpdate = db.updateUserDate( nameTXT,contactTXT,dobTXT);
+                if(checkUpdate)
+                    Toast.makeText( MainActivity.this,"New entry update",Toast.LENGTH_SHORT ).show();
+                else
+                    Toast.makeText( MainActivity.this," No new entry update",Toast.LENGTH_SHORT ).show();
+            }
+        } );
+
 
 
     }
